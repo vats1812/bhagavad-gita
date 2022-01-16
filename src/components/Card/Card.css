@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Amita&family=Kalam&display=swap');
+.card_cont {
+    perspective: 150rem;
+    position: relative;
+    width: 600px;
+    height: 500px;
+    box-shadow: none;
+    background: none;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3%;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    font-family: 'Amita', cursive;
+    white-space: pre-line;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-color: rgba(0, 0, 0, 0.4);
+    background: url("../../assets/bg.png") rgba(0, 0, 0, 0.315) no-repeat center;
+    background-size: 600px 900px;
+    animation: shadow 2s infinite;
+}
+
+.slok {
+    line-height: 40px;
+    font-size: x-large;
+    flex-direction: column;
+}
+
+.translation {
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+
+.cards.translation {
+    transform: rotateY(-180deg);
+}
+
+.flip {
+    width: 100%;
+    font-family: 'Kalam', cursive;
+    color: yellow;
+    display: flex;
+}
+
+.seetrans {
+    justify-content: end;
+}
+
+.seetrans p,
+.seeslok p {
+    cursor: pointer;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+#flip:checked~* .slok {
+    transform: rotateY(180deg);
+}
+
+#flip:checked~* .translation {
+    transform: rotateY(0deg);
+}
+
+.sanskrit,
+.transliteration,
+.hindi,
+.english {
+    margin: 10px
+}
+
+.sanskrit h2,
+.transliteration h2,
+.hindi h2,
+.english h2 {
+    color: white;
+    text-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 768px) {
+    .card_cont {
+        width: 350px;
+        height: 350px;
+    }
+    .cards {
+        background-size: 310px 500px;
+    }
+    .slok {
+        font-size: 0.9rem;
+        line-height: 20px;
+    }
+    .translation {
+        line-height: 20px;
+        font-weight: bold;
+        font-size: .7rem;
+        white-space: normal;
+    }
+}
+
+@keyframes shadow {
+    0% {
+        text-shadow: 0px 0px 5px rgb(0, 0, 0);
+    }
+    50% {
+        text-shadow: 0px 0px 5px rgb(255, 255, 255);
+    }
+    100% {
+        text-shadow: 0px 0px 5px rgb(0, 0, 0);
+    }
+}
